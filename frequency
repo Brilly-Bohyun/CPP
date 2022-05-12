@@ -1,0 +1,28 @@
+#include<iostream>
+#include<ctime> //시간을 이용한 time()를 호출
+using namespace std;
+
+const int SIZE = 10; //main함수와 randomNumbers, randomCounts함수에도 쓰여야하므로 전역 변수 설정
+
+void randomNumbers(int inumbers[], int size){
+	srand((unsigned)time(NULL)); //ctime을 통해 time()를 호출
+	cout << "생성값:";
+	for (int i = 0; i < SIZE; i++)
+		cout << " " << (inumbers[i] = rand() % SIZE); //rand호출, 난수표의 난수값을 활용함
+	cout << endl << endl;
+}
+
+void randomCounts(int inumbers[], int SIZE, int counts[]) {
+	for (int i = 0; i < SIZE; i++)
+		++counts[inumbers[i]]; //빈도수를 구함
+	for (int i = 0; i < SIZE; i++)
+		cout << i << " " << counts[i] << endl;
+}
+
+int main() {
+	int rnd[SIZE], cnt[SIZE] = { 0 };
+	randomNumbers(rnd, SIZE);
+	randomCounts(rnd, SIZE, cnt);
+
+	return 0;
+}
