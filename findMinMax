@@ -1,15 +1,15 @@
 #include<iostream>
 using namespace std;
 
-const int SIZE = 15;
+const int SIZE = 15; //main함수와 findMinMax함수에도 쓰여야하므로 전역 변수 설정
 
 void findMinMax(int inumbers[], int SIZE) {
 	int i, min, max;
 	max = min = inumbers[0];
 
-	for (i = 1; i < SIZE; i++) {
-		if (inumbers[i] > max) max = inumbers[i];
-		else if (inumbers[i] < min) min = inumbers[i];
+	for (i = 1; i < SIZE; i++) { //반복문을 통해 계속 비교를 할 수 있도록 설정
+		if (inumbers[i] > max) max = inumbers[i]; //배열에 값이 하나씩 비교되어서 최대값을 찾아냄
+		else if (inumbers[i] < min) min = inumbers[i]; //배열에 값이 하나씩 비교되어서 최소값을 찾아냄
 	}
 	cout << endl << "최소값: " << min << endl << "최대값: " << max << endl;
 }
@@ -17,12 +17,12 @@ void findMinMax(int inumbers[], int SIZE) {
 int main() {
 	int numberlist[SIZE] = { 100, 54, 66, 10, 7, 26, 98, 205, 35, 67, 84, 500, 0, 51, 72 };
 
-	cout << "정수값:";
-	for (int i = 0; i < SIZE; i++) {
-		cout << "" << numberlist[i];
+	cout << "정수값:"; 
+	for (int i = 0; i < SIZE; i++) { //배열에 있는 모든 정수값들을 출력해냄
+		cout << numberlist[i] << " ";
 	}
 	cout << endl;
-	findMinMax(numberlist, SIZE);
+	findMinMax(numberlist, SIZE); //최대,최소값을 찾아내는 함수를 호출해냄
 
 	return 0;
 }
