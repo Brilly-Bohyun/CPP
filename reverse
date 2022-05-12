@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-const int TOTAL = 15; //main함수와 findMinMax함수에도 쓰여야하므로 전역 변수 설정
+const int TOTAL = 15; //main함수와 reverse함수에도 쓰여야하므로 전역 변수 설정
 int revarr[TOTAL];
 
 void reverse(int inumbers[], int TOTAL) {
