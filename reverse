@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+const int TOTAL = 15; //main함수와 findMinMax함수에도 쓰여야하므로 전역 변수 설정
+int revarr[TOTAL];
+
+void reverse(int inumbers[], int TOTAL) {
+	int i;
+	for (i = 0; i <= TOTAL; i++) {
+		revarr[i] = inumbers[TOTAL - i - 1];
+	}
+	cout << "역순값:";
+	for (int i = 0; i < TOTAL; i++) {
+		cout << revarr[i] << " ";
+	}
+}
+
+int main() {
+	int numberlist[TOTAL] = { 100, 54, 66, 10, 7, 26, 98, 205, 35, 67, 84, 500, 0, 51, 72 };
+
+	cout << "원본값:";
+	for (int i = 0; i < TOTAL; i++) { //배열에 있는 모든 정수값들을 순서대로 출력해냄
+		cout << numberlist[i] << " ";
+	}
+	cout << endl;
+	reverse(numberlist, TOTAL); //역순의 배열을 출력해냄
+
+	return 0;
+}
